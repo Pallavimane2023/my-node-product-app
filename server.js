@@ -17,7 +17,7 @@ app.use(express.json());
 app.use("/api/auth",authRoutes);
 app.use("/api/user", productRoutes);
 
-mongoose.connect('mongodb+srv://pallavimane578:3rAK77Fe8E9QFbQJ@cluster0.pd8mvub.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0').then(()=>{
+mongoose.connect(process.env.MONGODB_URL).then(()=>{
     console.log("connected to mongodb")
 
     app.listen(3000,()=>{
